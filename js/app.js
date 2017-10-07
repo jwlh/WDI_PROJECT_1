@@ -21,6 +21,10 @@ $(() => {
 
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
+    console.log(playedArray);
+    if (ansArray.length === playedArray.length) {
+      checkAnswer();
+    }
   });
 
   //randomly select 3 li id's from the array of all id's
@@ -30,7 +34,7 @@ $(() => {
   console.log(ansArray);
 
 
-  //function to play the sequence to copy
+  //function to play the sequence from the ansArray
   function playAnswer(){
 
     for (let i=0; i<ansArray.length; i++) {
@@ -48,15 +52,8 @@ $(() => {
     }
   }
 
-  // element.stop().animate({opacity: '1'}, {		//animate the element to appear to flash
-  // 				duration: 50,
-  // 				complete: function(){
-  // 				element.stop().animate({opacity: '0.6'}, 200);
-  // 				}
 
-  if (ansArray.length === playedArray.length) {
-    checkAnswer();
-  }
+
 
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
