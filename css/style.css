@@ -30,3 +30,11 @@ li {
   text-align: center;
   width: 50%;
 }
+
+.activated {
+  animation: blinker 1s linear;
+}
+
+@keyframes blinker {
+  50% { color: red; }
+}

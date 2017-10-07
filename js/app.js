@@ -1,5 +1,5 @@
 $(() => {
-
+  let chosenLi;
   const playedArray = [];
   const ansArray = [];
   //get array of LIs from DOM and add their ID's to an array
@@ -9,6 +9,16 @@ $(() => {
 
   //Add click event to each to add ID to user array
   $('li').on('click', (e) => {
+    //added audio to each li click event
+    console.log(e.target);
+    new Audio(`./Roland_TB-303/${e.target.id}.wav`).play();
+    // change colour when clicked for short time
+    $(e.target).addClass('activated');
+
+    setTimeout(function(){
+      $(e.target).removeClass('activated');
+    },250);
+    //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
     console.log(playedArray);
   });
@@ -17,9 +27,66 @@ $(() => {
   for (let i=0; i<3; i++) {
     ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
   }
-
   console.log(ansArray);
 
+  //loop through the answer array and make each button light up in turn
+  // function playBack() {
+  //   for (var i = 0; i < ansArray.length; i++) {
+  //     const $chosenLi = ansArray[i];
+  //     $(`#${$chosenLi}`).css('color', 'red');
+  //     setTimeout(playBack, 1000);
+  //   }
+  // }
+  console.log('square2');
+  function playAnswer(){
+    console.log('square1');
+    for (let i=0; i<ansArray.length; i++) {
+
+      setTimeout(function(){
+        chosenLi = ansArray[i];
+
+        $(`#${chosenLi}`).trigger('click');
+      },500*i);
+
+    }
+  }
+
+  //   $('.row').each(function(i){
+  //   var row = $(this);
+  //   setTimeout(function() {
+  //     row.toggleClass('flip');
+  //   }, 500*i);
+  //});
+
+  //   setTimeout(function() {$("#button" + tempColor).removeClass("activated");}, 250);
+  //   memoryArrayCounter++;
+  //   if (memoryArrayCounter == memoryArray.length) {
+  //     clearInterval(runMemory);
+  //     $(".fourButton").css("pointer-events", "auto");
+  //   }
+  // }
+
+  $('#play').on('click', playAnswer);
+
+
+
+  // for (let i=0; i<ansArray.length; i++) {
+  //   setTimeout( function timer(){
+  //
+  //     setTimeout(function() {
+  //       $(`#${$chosenLi}`).css('color', 'red')}, 300);
+  //   }, (i+1)*500 );
+  // }
+  //
+  // function lightOn() {
+  //   ;
+  // }
+  //
+  // function lightOff() {
+  //   $(`#${$chosenLi}`).css('color', 'white');
+  // }
+
+  // $(ansArray[i]).style(color: red);
 
 }); // end of waiting for DOM to load function
 
