@@ -1,7 +1,8 @@
 $(() => {
   let chosenLi;
-  const playedArray = [];
-  const ansArray = [];
+  let playedArray = [];
+  let ansArray = [];
+  let numberOfButtons = 3;
   //get array of LIs from DOM and add their ID's to an array
   const $lisArray = $('li').map(function () {
     return this.id;
@@ -22,20 +23,23 @@ $(() => {
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
     console.log(playedArray);
+    //then check if players array is the smae length as the answer array, if it is check they are the same or not
     if (ansArray.length === playedArray.length) {
       checkAnswer();
     }
   });
 
   //randomly select 3 li id's from the array of all id's
-  for (let i=0; i<3; i++) {
-    ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
+  function createAnsArray(){
+    for (let i=0; i<numberOfButtons; i++) {
+      ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
+    }
+    console.log(ansArray);
   }
-  console.log(ansArray);
-
 
   //function to play the sequence from the ansArray
   function playAnswer(){
+    createAnsArray();
 
     for (let i=0; i<ansArray.length; i++) {
 
@@ -58,12 +62,23 @@ $(() => {
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
       console.log('correct');
+      numberOfButtons++;
+      playedArray = [];
+      ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
+      console.log(ansArray);
+
     } else {
       console.log('incorrect');
     }
   }
   //clicking on play button event
   $('#play').on('click', playAnswer);
+
+
+
+
+
+
 
 
 }); // end of waiting for DOM to load function
