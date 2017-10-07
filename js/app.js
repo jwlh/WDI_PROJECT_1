@@ -10,16 +10,17 @@ $(() => {
   //Add click event to each to add ID to user array
   $('li').on('click', (e) => {
     //added audio to each li click event
-    new Audio(`./Roland_TB-303/${e.target.id}.wav`).play();
+    new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
-    $(e.target).addClass('activated');
+    $(e.target).animate({opacity: '1'}, {
+      duration: 5,
+      complete: function(){
+        $(`#${chosenLi}`).animate({opacity: '0.6'},50);
+      }
+    });
 
-    setTimeout(function(){
-      $(e.target).removeClass('activated');
-    },1500);
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
-    console.log(playedArray);
   });
 
   //randomly select 3 li id's from the array of all id's
@@ -36,14 +37,22 @@ $(() => {
 
       setTimeout(function(){
         chosenLi = ansArray[i];
-        $(`#${chosenLi}`).addClass('activated');
-        new Audio(`./Roland_TB-303/${chosenLi}.wav`).play();
-      },1000*(i+1));
-      $(`#${chosenLi}`).removeClass('activated');
+        $(`#${chosenLi}`).animate({opacity: '1'}, {
+          duration: 50,
+          complete: function(){
+            $(`#${chosenLi}`).animate({opacity: '0.6'},50);
+          }
+        });
+      });
+
     }
   }
 
-
+  // element.stop().animate({opacity: '1'}, {		//animate the element to appear to flash
+  // 				duration: 50,
+  // 				complete: function(){
+  // 				element.stop().animate({opacity: '0.6'}, 200);
+  // 				}
 
   if (ansArray.length === playedArray.length) {
     checkAnswer();
