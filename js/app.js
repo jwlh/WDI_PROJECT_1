@@ -8,7 +8,7 @@ $(() => {
   let numberOfButtons = 3;
   let highScore = 0;
   let currentScore = 0;
-  let difficultyLevel = parseInt($('#difficulty').find(':selected').val());
+
 
 
 
@@ -52,15 +52,17 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
+    const difficultyLevel = parseInt($('#difficulty').find(':selected').val());
     $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {
-      if (counter === ansArray.length) {
+      if (counter === (ansArray.length - 1)) {
         $('#reset').prop('disabled',false);
         clearInterval(interval);
       }
       console.log(ansArray[counter]);
       $(`#${ansArray[counter]}`).animate({opacity: '1'});
+      new Audio(`./Roland_TB-303/${ansArray[counter]}.mp3`).play();
 
       setTimeout(function() {
         $(`#${ansArray[counter]}`).animate({opacity: '0.6'});
@@ -84,6 +86,7 @@ $(() => {
 
     } else {
       alert('incorrect');
+      resetGame();
     }
   }
   //clicking on play button event
@@ -114,6 +117,7 @@ $(() => {
     currentScore = 0;
     $('#currentScore').text(`Current Score = ${currentScore}`);
   }
+
 
 
 

@@ -1,46 +1,68 @@
 * {
   box-sizing: border-box;
+
 }
 
 body {
-  background: black;
+  background-image:url(../images/tileable-light-wood-textures-5.jpg);
 }
 
 main {
-  margin:0 auto;
-  width: 600px;
+  padding: 50px;
+  margin:20px 20px;
+  size: 500px 400px;
+  background-color: #2f3336;
+  background-position: center;
+  background-size: 500px 400px;
+}
+
+aside {
+  background-color: black;
+  border: 2px solid white;
+}
+
+h1 {
+  color: white;
+  font-family: 'Electrolize', sans-serif;
 }
 
 h2 {
   color: white;
+  font-family: 'Electrolize', sans-serif;
 }
 
 
 ul {
   border: 2px solid white;
   height: 400px;
-  margin: 0 auto;
-  padding: 0;
-  width: 66%;
+  width: 400px;
+  margin: 30px auto;
 }
 
 li {
   border: 2px solid white;
   color: white;
   float: left;
-  font-size: 50px;
-  height: 25%;
+  font-size: 30px;
+  height: 23%;
   list-style-type: none;
   text-align: center;
-  width: 25%;
+  width: 23%;
   opacity: 0.6;
-  background-color: red;
+  margin: 1%;
+  font-family: 'Electrolize', sans-serif;
 }
 
-.activated {
-  opacity: 1;
+.columnA {
+  background-color: #3facf9;
 }
 
-@keyframes blinker {
-  50% { background-color: red; }
+.columnB {
+  background-color: #3df143;
+}
+.columnC {
+  background-color: #a879e2;
+}
+.columnD {
+  background-color: #f43d41;
 }
