@@ -16,13 +16,11 @@ main {
   background-size: 500px 400px;
 }
 
-aside {
-  background-color: black;
-  border: 2px solid white;
-}
-
 h1 {
-  color: white;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
   font-family: 'Electrolize', sans-serif;
 }
 
@@ -48,21 +46,38 @@ li {
   list-style-type: none;
   text-align: center;
   width: 23%;
-  opacity: 0.6;
+  opacity: 0.7;
   margin: 1%;
   font-family: 'Electrolize', sans-serif;
 }
 
 .columnA {
-  background-color: #3facf9;
+  background-color: #feb74f;
 }
 
 .columnB {
-  background-color: #3df143;
+  background-color: #FA4CFF;
 }
 .columnC {
-  background-color: #a879e2;
+  background-color: #84df3e;
 }
 .columnD {
-  background-color: #f43d41;
+  background-color: #fd7875;
+}
+
+
+
+
+/*neon glow for words*/
+.neon {
+  color: white;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #f43d41,
+    0 0 80px #f43d41,
+    0 0 90px #f43d41,
+    0 0 100px #f43d41,
+    0 0 150px #f43d41;
 }

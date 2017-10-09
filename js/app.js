@@ -30,7 +30,7 @@ $(() => {
     new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
     $(e.target).animate({opacity: '1'}, 400, function() {
-      $(e.target).animate({opacity: '0.6'}, 150);
+      $(e.target).animate({opacity: '0.7'}, 150);
     });
 
     //added function to push each Li's ID into array when clicked
@@ -65,7 +65,7 @@ $(() => {
       new Audio(`./Roland_TB-303/${ansArray[counter]}.mp3`).play();
 
       setTimeout(function() {
-        $(`#${ansArray[counter]}`).animate({opacity: '0.6'});
+        $(`#${ansArray[counter]}`).animate({opacity: '0.7'});
         counter++;
       },50);
     }, difficultyLevel);
