@@ -8,6 +8,9 @@ $(() => {
   let numberOfButtons = 3;
   let highScore = 0;
   let currentScore = 0;
+  let difficultyLevel = parseInt($('#difficulty').find(':selected').val());
+
+
 
   //function to start game
 
@@ -62,8 +65,8 @@ $(() => {
       setTimeout(function() {
         $(`#${ansArray[counter]}`).animate({opacity: '0.6'});
         counter++;
-      },600);
-    }, 1000);
+      },50);
+    }, difficultyLevel);
 
   }
 
@@ -80,7 +83,7 @@ $(() => {
       playAnswer();
 
     } else {
-      console.log('incorrect');
+      alert('incorrect');
     }
   }
   //clicking on play button event
@@ -111,6 +114,7 @@ $(() => {
     currentScore = 0;
     $('#currentScore').text(`Current Score = ${currentScore}`);
   }
+
 
 
 }); // end of waiting for DOM to load function
