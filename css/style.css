@@ -25,16 +25,16 @@ li {
   color: white;
   float: left;
   font-size: 50px;
-  height: 50%;
+  height: 25%;
   list-style-type: none;
   text-align: center;
-  width: 50%;
+  width: 25%;
   opacity: 0.6;
   background-color: red;
 }
 
 .activated {
-  animation: blinker 0.3s linear;
+  opacity: 1;
 }
 
 @keyframes blinker {

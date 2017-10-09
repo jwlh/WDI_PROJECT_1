@@ -1,8 +1,18 @@
+
+
+
 $(() => {
-  let chosenLi;
+
   let playedArray = [];
-  let ansArray = [];
+  const ansArray = [];
   let numberOfButtons = 3;
+
+  //function to start game
+
+  function startGame() {
+    createAnsArray();
+    playAnswer();
+  }
   //get array of LIs from DOM and add their ID's to an array
   const $lisArray = $('li').map(function () {
     return this.id;
@@ -13,11 +23,8 @@ $(() => {
     //added audio to each li click event
     new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
-    $(e.target).animate({opacity: '1'}, {
-      duration: 5,
-      complete: function(){
-        $(`#${chosenLi}`).animate({opacity: '0.6'},50);
-      }
+    $(e.target).animate({opacity: '1'}, 400, function() {
+      $(e.target).animate({opacity: '0.6'}, 150);
     });
 
     //added function to push each Li's ID into array when clicked
@@ -39,26 +46,25 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-    createAnsArray();
 
-    for (let i=0; i<ansArray.length; i++) {
+    let counter = 0;
+    const interval = setInterval(function() {
+      if (counter === ansArray.length) {
 
-      setTimeout(function(){
-        chosenLi = ansArray[i];
-        $(`#${chosenLi}`).animate({opacity: '1'}, {
-          duration: 50,
-          complete: function(){
-            $(`#${chosenLi}`).animate({opacity: '0.6'},50);
-          }
-        });
-      });
+        clearInterval(interval);
+      }
+      console.log(ansArray[counter]);
+      $(`#${ansArray[counter]}`).animate({opacity: '1'});
 
-    }
+      setTimeout(function() {
+        $(`#${ansArray[counter]}`).animate({opacity: '0.6'});
+        counter++;
+      },600);
+    }, 1000);
   }
 
 
-
-
+  //function to check user answer
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
       console.log('correct');
@@ -66,13 +72,14 @@ $(() => {
       playedArray = [];
       ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
       console.log(ansArray);
+      playAnswer();
 
     } else {
       console.log('incorrect');
     }
   }
   //clicking on play button event
-  $('#play').on('click', playAnswer);
+  $('#play').on('click', startGame);
 
 
 
@@ -101,3 +108,19 @@ $(() => {
 
 //1. volume slider to look like mixing deck slider to adjust sound volume of alerts
 //2. difficluty selector to look like mixing nob.  difficluty selector adjusts speed which the computer plays through the sequence of buttons harder = quicker
+
+
+
+// const liArray = [];
+// let counter = 0;
+// setInterval(function() {
+//   liArray[counter].addClass('light');
+//   setTimeout(function() {
+//     liArray[counter].removeClass('light');
+//     counter++;
+//   }, 600);
+//
+//   if (counter === liArray.length) {
+//     clearInterval();
+//   }
+// }, 1000);
