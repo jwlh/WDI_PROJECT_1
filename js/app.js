@@ -4,8 +4,10 @@
 $(() => {
 
   let playedArray = [];
-  const ansArray = [];
+  let ansArray = [];
   let numberOfButtons = 3;
+  let highScore = 0;
+  let currentScore = 0;
 
   //function to start game
 
@@ -84,12 +86,31 @@ $(() => {
 
   //function to update score
   function updateScore() {
-    $('#score').text(`Score = ${ansArray.length}`);
+    currentScore = ansArray.length;
+    console.log(currentScore);
+    console.log(highScore);
+    $('#currentScore').text(`Current Score = ${currentScore}`);
+
+    if (parseInt(highScore) === 0) {
+      highScore = currentScore;
+      $('#highScore').text(`High Score = ${highScore}`);
+    } else if (parseInt(currentScore) > parseInt(highScore)) {
+      highScore = currentScore;
+      $('#highScore').text(`High Score = ${highScore}`);
+    }
   }
 
+  //click event for reset button
+  $('#reset').on('click', resetGame);
 
-
-
+  //reset game function
+  function resetGame() {
+    playedArray = [];
+    ansArray = [];
+    numberOfButtons = 3;
+    currentScore = 0;
+    $('#currentScore').text(`Current Score = ${currentScore}`);
+  }
 
 
 }); // end of waiting for DOM to load function
