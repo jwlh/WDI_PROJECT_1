@@ -14,6 +14,7 @@ $(() => {
   function startGame() {
     createAnsArray();
     playAnswer();
+
   }
   //get array of LIs from DOM and add their ID's to an array
   const $lisArray = $('li').map(function () {
@@ -48,11 +49,11 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-
+    $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {
       if (counter === ansArray.length) {
-
+        $('#reset').prop('disabled',false);
         clearInterval(interval);
       }
       console.log(ansArray[counter]);
@@ -63,6 +64,7 @@ $(() => {
         counter++;
       },600);
     }, 1000);
+
   }
 
 
@@ -87,8 +89,6 @@ $(() => {
   //function to update score
   function updateScore() {
     currentScore = ansArray.length;
-    console.log(currentScore);
-    console.log(highScore);
     $('#currentScore').text(`Current Score = ${currentScore}`);
 
     if (parseInt(highScore) === 0) {
