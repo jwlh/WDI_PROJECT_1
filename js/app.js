@@ -68,6 +68,7 @@ $(() => {
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
       console.log('correct');
+      updateScore();
       numberOfButtons++;
       playedArray = [];
       ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
@@ -81,7 +82,10 @@ $(() => {
   //clicking on play button event
   $('#play').on('click', startGame);
 
-
+  //function to update score
+  function updateScore() {
+    $('#score').text(`Score = ${ansArray.length}`);
+  }
 
 
 
