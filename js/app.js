@@ -8,7 +8,7 @@ $(() => {
   let numberOfButtons = 3;
   let highScore = 0;
   let currentScore = 0;
-
+  let difficultyLevel = 1000;
 
 
 
@@ -17,12 +17,18 @@ $(() => {
   function startGame() {
     createAnsArray();
     playAnswer();
-
   }
   //get array of LIs from DOM and add their ID's to an array
   const $lisArray = $('li').map(function () {
     return this.id;
   }).get();
+
+  //add click event to difficulty selectors
+  $('h4').on('click', (e) => {
+    $('h4').removeClass('neon');
+    $(e.target).addClass('neon');
+    difficultyLevel = $(e.target.val);
+  });
 
   //Add click event to each to add ID to user array
   $('li').on('click', (e) => {
@@ -33,7 +39,6 @@ $(() => {
     setTimeout(function() {
       $(e.target).removeClass('highlight');
     },500);
-
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
     console.log(playedArray);
@@ -42,6 +47,7 @@ $(() => {
       checkAnswer();
     }
   });
+
 
   //randomly select 3 li id's from the array of all id's
   function createAnsArray(){
@@ -53,7 +59,7 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-    const difficultyLevel = parseInt($('#difficulty').find(':selected').val());
+    
     $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {

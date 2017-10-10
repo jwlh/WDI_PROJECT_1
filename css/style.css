@@ -26,33 +26,20 @@ h1 {
 #controls {
   background-color: white;
   width: 400px;
-  height: 100px;
+  height: 150px;
   margin: 0 auto;
   padding: 15px 15px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-#button1 {
+.button-container {
 display: inline-block;
 padding: 4px;
 margin: 4px;
 text-align: center;
 }
 
-#button2 {
-display: inline-block;
-padding: 4px;
-margin: 4px;
-text-align: center;
-}
-
-#button3 {
-display: inline-block;
-padding: 4px;
-margin: 4px;
-text-align: center;
-}
 
 h2 {
   font-family: 'Electrolize', sans-serif;
@@ -73,7 +60,19 @@ h2 {
 
 }
 
+#difficultyBox {
+  margin: 30px auto;
+  float: right;
+}
 
+h4 {
+  padding: 2px;
+  font-size: 20px;
+  color: black;
+  font-family: 'Electrolize', sans-serif;
+  text-align: center;
+  display: inline-block;
+}
 ul {
   border: 2px solid white;
   height: 400px;
@@ -129,8 +128,6 @@ h3 {
   background-color: #FD0600;
   background: radial-gradient(#FF9A98 2%, #FD0600 98% );
 }
-
-
 
 /*neon glow for words*/
 .neon {
