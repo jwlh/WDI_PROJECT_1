@@ -8,9 +8,11 @@ body {
 }
 
 main {
-  margin:20px 20px;
+  margin:20px 200px;
+  padding: 10px 0px;
   size: 500px 400px;
   background-color: #2f3336;
+  border-radius: 20px;
 }
 
 h1 {
@@ -24,17 +26,51 @@ h1 {
 #controls {
   background-color: white;
   width: 400px;
+  height: 100px;
   margin: 0 auto;
-  padding: 20px 0;
-  border: 2px solid red;
+  padding: 15px 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
+#button1 {
+display: inline-block;
+padding: 4px;
+margin: 4px;
+text-align: center;
+}
+
+#button2 {
+display: inline-block;
+padding: 4px;
+margin: 4px;
+text-align: center;
+}
+
+#button3 {
+display: inline-block;
+padding: 4px;
+margin: 4px;
+text-align: center;
+}
+
+h2 {
+  font-family: 'Electrolize', sans-serif;
+}
 .buttons {
-  width: 40px;
-  margin: 10px auto;
+  color: white;
+  font-size: 20px;
+  height: 40px;
   text-align: center;
-  display: inline-block;
+  width: 40px;
+  opacity: 1;
+  margin-bottom: 10px;
+  font-family: 'Electrolize', sans-serif;
   border-radius: 2px;
+  transition: all 0.2s ease;
+  background-color: #1D1BFD;
+  background: radial-gradient(#BFBEFF 2%, #1D1BFD 98% );
+
 }
 
 
@@ -47,7 +83,7 @@ ul {
 
 /*highlight class for buttons*/
 .highlight {
-  border: 5px solid #FF0000;
+  border: 5px solid #FFFFFF;
 }
 
 li {
@@ -62,7 +98,6 @@ li {
   margin: 1%;
   font-family: 'Electrolize', sans-serif;
   border-radius: 2px;
-  border: 5px solid #FFFFFF;
   transition: all 0.2s ease;
 }
 
@@ -70,7 +105,7 @@ li {
   width: 400px;
   margin: 10px auto;
 }
-h2 {
+h3 {
   padding: 5px;
   font-size: 30px;
   color: white;
