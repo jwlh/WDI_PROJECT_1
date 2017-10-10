@@ -29,9 +29,11 @@ $(() => {
     //added audio to each li click event
     new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
-    $(e.target).animate({border: '5px solid #ff0000'}, 400, function() {
-      $(e.target).animate({border: '5px solid transparent'}, 150);
-    });
+    $(e.target).addClass('highlight');
+    setTimeout(function() {
+      $(e.target).removeClass('highlight');
+    },500);
+
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
     console.log(playedArray);
