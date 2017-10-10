@@ -32,7 +32,6 @@ $(() => {
     $(e.target).animate({opacity: '1'}, 400, function() {
       $(e.target).animate({opacity: '0.7'}, 150);
     });
-
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
     console.log(playedArray);

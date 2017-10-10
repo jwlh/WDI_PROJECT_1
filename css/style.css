@@ -8,12 +8,9 @@ body {
 }
 
 main {
-  padding: 50px;
   margin:20px 20px;
   size: 500px 400px;
   background-color: #2f3336;
-  background-position: center;
-  background-size: 500px 400px;
 }
 
 h1 {
@@ -24,9 +21,20 @@ h1 {
   font-family: 'Electrolize', sans-serif;
 }
 
-h2 {
-  color: white;
-  font-family: 'Electrolize', sans-serif;
+#controls {
+  background-color: white;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border: 2px solid red;
+}
+
+.buttons {
+  width: 40px;
+  margin: 10px auto;
+  text-align: center;
+  display: inline-block;
+  border-radius: 2px;
 }
 
 
@@ -34,11 +42,10 @@ ul {
   border: 2px solid white;
   height: 400px;
   width: 400px;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 li {
-  border: 2px solid white;
   color: white;
   float: left;
   font-size: 30px;
@@ -46,23 +53,39 @@ li {
   list-style-type: none;
   text-align: center;
   width: 23%;
-  opacity: 0.7;
+  opacity: 1;
   margin: 1%;
   font-family: 'Electrolize', sans-serif;
+  border-radius: 2px;
 }
 
+.scores {
+  width: 400px;
+  margin: 10px auto;
+}
+h2 {
+  padding: 5px;
+  font-size: 30px;
+  color: white;
+  font-family: 'Electrolize', sans-serif;
+  text-align: center;
+}
 .columnA {
-  background-color: #feb74f;
+  background-color: #FE9500;
+  background: radial-gradient(#FFCE88 2%, #FE9500 98% );
 }
 
 .columnB {
   background-color: #FA4CFF;
+  background: radial-gradient(#FDAAFF 2%, #FA00FF 98%);
 }
 .columnC {
-  background-color: #84df3e;
+  background-color: #46FF0D;
+  background: radial-gradient(#C8FFB7 2%, #46FF0D 98% );
 }
 .columnD {
-  background-color: #fd7875;
+  background-color: #FD0600;
+  background: radial-gradient(#FF9A98 2%, #FD0600 98% );
 }
 
 
