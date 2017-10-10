@@ -29,8 +29,8 @@ $(() => {
     //added audio to each li click event
     new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
-    $(e.target).animate({opacity: '1'}, 400, function() {
-      $(e.target).animate({opacity: '0.7'}, 150);
+    $(e.target).animate({border: '5px solid #ff0000'}, 400, function() {
+      $(e.target).animate({border: '5px solid transparent'}, 150);
     });
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
@@ -60,17 +60,16 @@ $(() => {
         clearInterval(interval);
       }
       console.log(ansArray[counter]);
-      $(`#${ansArray[counter]}`).animate({opacity: '1'});
+      $(`#${ansArray[counter]}`).addClass('highlight');
       new Audio(`./Roland_TB-303/${ansArray[counter]}.mp3`).play();
 
       setTimeout(function() {
-        $(`#${ansArray[counter]}`).animate({opacity: '0.7'});
+        $(`#${ansArray[counter]}`).removeClass('highlight');
         counter++;
-      },50);
+      },(difficultyLevel-100));
     }, difficultyLevel);
 
   }
-
 
   //function to check user answer
   function checkAnswer() {
