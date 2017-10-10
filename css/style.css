@@ -8,9 +8,9 @@ body {
 }
 
 main {
-  margin: 2px 240px;
-  padding: 10px 0;
-  size: 500px 400px;
+  margin: 2px auto;
+  padding: 20px;
+  width: 440px;
   background-color: #2f3336;
   border-radius: 20px;
 }
