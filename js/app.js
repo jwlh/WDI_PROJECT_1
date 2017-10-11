@@ -1,10 +1,7 @@
 
 //things to do today
-//1. stop reset/play buttons working when playing back
-//2. add scrolling bar text instead of alerts for correct or incorrect answers
-//3. add mode where you can just play around with the synth
-//4. remove blue highlighting around play and rest buttons when you click
-
+//add mode where you can just play around with the synth
+//remove blue highlighting around play and rest buttons when you click
 // make buttons look grey by adding a class called hidden to all of them that makes the colour grey then remove that class when they are added and add it back in after a certain period of time
 
 $(() => {
@@ -55,9 +52,9 @@ $(() => {
     //added audio to each li click event
     new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
     // change colour when clicked for short time
-    $(e.target).addClass('highlight');
+    $(e.target).removeClass('hidden');
     setTimeout(function() {
-      $(e.target).removeClass('highlight');
+      $(e.target).addClass('hidden');
     },500);
     //added function to push each Li's ID into array when clicked
     playedArray.push(e.target.id);
@@ -85,11 +82,11 @@ $(() => {
         clearInterval(interval);
       }
 
-      $(`#${ansArray[counter]}`).addClass('highlight');
+      $(`#${ansArray[counter]}`).removeClass('hidden');
       new Audio(`./Roland_TB-303/${ansArray[counter]}.mp3`).play();
 
       setTimeout(function() {
-        $(`#${ansArray[counter]}`).removeClass('highlight');
+        $(`#${ansArray[counter]}`).addClass('hidden');
         counter++;
       },(difficultyLevel-100));
     }, difficultyLevel);

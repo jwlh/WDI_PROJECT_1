@@ -105,12 +105,12 @@ li {
   color: white;
   float: left;
   font-size: 30px;
-  height: 23%;
+  height: 22%;
   list-style-type: none;
   text-align: center;
-  width: 23%;
+  width: 22%;
   opacity: 1;
-  margin: 1%;
+  margin: 1.5%;
   font-family: 'Electrolize', sans-serif;
   border-radius: 2px;
   transition: all 0.2s ease;
@@ -137,6 +137,12 @@ li {
 .columnD {
   background-color: #FD0600;
   background: radial-gradient(#FF9A98 2%, #FD0600 98% );
+}
+
+.hidden {
+  background: #7F8687;
+  background: radial-gradient(#C5CACC 2%, #7F8687 98% );
+
 }
 
 h5 {
