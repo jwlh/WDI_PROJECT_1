@@ -77,7 +77,7 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-
+    updateTicker('OK....Here we go!!!');
     $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {
@@ -100,16 +100,16 @@ $(() => {
   //function to check user answer
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
+      updateTicker('Yes you are correct!!!');
       updateScore();
       numberOfButtons++;
       playedArray = [];
       ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
-      console.log(ansArray);
       disableReset();
       playAnswer();
       enableReset();
     } else {
-      alert('incorrect');
+      updateTicker('WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!!');
       resetGame();
     }
   }
@@ -153,6 +153,7 @@ $(() => {
 
   //reset game function
   function resetGame() {
+    updateTicker('Game has been reset');
     enablePlay();
     playedArray = [];
     ansArray = [];
