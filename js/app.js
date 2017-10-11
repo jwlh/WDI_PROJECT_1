@@ -14,7 +14,7 @@ $(() => {
   let numberOfButtons = 3;
   let highScore = 0;
   let currentScore = 0;
-  let difficultyLevel = 1000;
+  let difficultyLevel = 750;
 
   enablePlay();
   animateTicker();
@@ -40,6 +40,14 @@ $(() => {
     $('h4').removeClass('neon');
     $(e.target).addClass('neon');
     difficultyLevel = parseInt(e.target.id);
+    console.log(e.target.id);
+    if (e.target.id === '1000') {
+      updateTicker('Easy...Oh was it too hard for you?????');
+    } else if (e.target.id === '750') {
+      updateTicker('Medium...So you are calling yourself average basically');
+    } else if (e.target.id === '500') {
+      updateTicker('Hard...Pretty confident are we???');
+    }
   });
 
   //Add click event to each li
