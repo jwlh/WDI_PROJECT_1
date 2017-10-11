@@ -77,7 +77,6 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-    updateTicker('OK....Here we go!!!');
     $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {
@@ -85,7 +84,7 @@ $(() => {
         $('#reset').prop('disabled',false);
         clearInterval(interval);
       }
-      console.log(ansArray[counter]);
+
       $(`#${ansArray[counter]}`).addClass('highlight');
       new Audio(`./Roland_TB-303/${ansArray[counter]}.mp3`).play();
 
@@ -100,17 +99,16 @@ $(() => {
   //function to check user answer
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
-      updateTicker('Yes you are correct!!!');
+      updateTicker('CORRECT! On to the next level!');
       updateScore();
       numberOfButtons++;
       playedArray = [];
       ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
       disableReset();
-      playAnswer();
+      setTimeout(playAnswer, 2000);
       enableReset();
     } else {
-      updateTicker('WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!! WRONG!!!');
-      resetGame();
+      updateTicker('WRONG!!! WRONG!!! WRONG!!!');
     }
   }
 
@@ -153,7 +151,7 @@ $(() => {
 
   //reset game function
   function resetGame() {
-    updateTicker('Game has been reset');
+    updateTicker('Game is reset, press play to go again');
     enablePlay();
     playedArray = [];
     ansArray = [];
@@ -164,6 +162,7 @@ $(() => {
 
   // function to update text in ticker-wrap
   function updateTicker(sample) {
+    $('.ticker-text').stop(true,true);
     $('.ticker-text').html(sample);
     animateTicker();
   }
@@ -173,7 +172,7 @@ $(() => {
     $('.ticker-text').animate({
       left: '420px'},1);
     $('.ticker-text').animate({
-      left: '-1000px'
-    }, 10000, animateTicker);
+      left: '-600px'
+    }, 10000,'linear', animateTicker);
   }
 }); // end of waiting for DOM to load function
