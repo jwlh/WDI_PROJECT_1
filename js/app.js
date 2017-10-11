@@ -2,7 +2,7 @@
 //things to do today
 //add mode where you can just play around with the synth
 //remove blue highlighting around play and rest buttons when you click
-// make buttons look grey by adding a class called hidden to all of them that makes the colour grey then remove that class when they are added and add it back in after a certain period of time
+
 
 $(() => {
 
@@ -15,16 +15,18 @@ $(() => {
 
   enablePlay();
   animateTicker();
+  enableLiClicks();
 
 
   //function to start game
   function startGame() {
-    updateTicker('Let\'s play !!');
+    updateTicker('Let\'s Play!');
+    disableLiClicks();
     disablePlay();
-    createAnsArray();
     disableReset();
+    createAnsArray();
     playAnswer();
-    enableReset();
+
   }
 
   //get array of LIs from DOM and add their ID's to an array
@@ -37,32 +39,39 @@ $(() => {
     $('h4').removeClass('neon');
     $(e.target).addClass('neon');
     difficultyLevel = parseInt(e.target.id);
-    console.log(e.target.id);
     if (e.target.id === '1000') {
-      updateTicker('Easy...Oh was it too hard for you?????');
+      updateTicker('Easy...BORING...Press Play to start');
     } else if (e.target.id === '750') {
-      updateTicker('Medium...So you are calling yourself average basically');
+      updateTicker('Medium...Sensible choice...Press Play to start');
     } else if (e.target.id === '500') {
-      updateTicker('Hard...Pretty confident are we???');
+      updateTicker('Hard...Ballsy...Press Play to start');
     }
+    resetGame();
+
   });
 
   //Add click event to each li
-  $('li').on('click', (e) => {
-    //added audio to each li click event
-    new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
-    // change colour when clicked for short time
-    $(e.target).removeClass('hidden');
-    setTimeout(function() {
-      $(e.target).addClass('hidden');
-    },500);
-    //added function to push each Li's ID into array when clicked
-    playedArray.push(e.target.id);
-    //then check if players array is the smae length as the answer array, if it is check they are the same or not
-    if (ansArray.length === playedArray.length) {
-      checkAnswer();
-    }
-  });
+  function enableLiClicks(){
+    $('li').on('click', (e) => {
+      //added audio to each li click event
+      new Audio(`./Roland_TB-303/${e.target.id}.mp3`).play();
+      // change colour when clicked for short time
+      $(e.target).removeClass('hidden');
+      setTimeout(function() {
+        $(e.target).addClass('hidden');
+      },500);
+      //added function to push each Li's ID into array when clicked
+      playedArray.push(e.target.id);
+      //then check if players array is the samee length as the answer array, if it is check they are the same or not
+      if (ansArray.length === playedArray.length) {
+        checkAnswer();
+      }
+    });
+  }
+  //remove click events from lis
+  function disableLiClicks() {
+    $('li').off('click');
+  }
 
 
   //randomly select 3 li id's from the array of all id's
@@ -74,12 +83,12 @@ $(() => {
 
   //function to play the sequence from the ansArray
   function playAnswer(){
-    $('#reset').prop('disabled',true);
     let counter = 0;
     const interval = setInterval(function() {
       if (counter === (ansArray.length - 1)) {
-        $('#reset').prop('disabled',false);
         clearInterval(interval);
+        enableReset();
+        enableLiClicks();
       }
 
       $(`#${ansArray[counter]}`).removeClass('hidden');
@@ -96,16 +105,17 @@ $(() => {
   //function to check user answer
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
+
       updateTicker('CORRECT! On to the next level!');
       updateScore();
       numberOfButtons++;
       playedArray = [];
       ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
       disableReset();
+      disableLiClicks();
       setTimeout(playAnswer, 2000);
-      enableReset();
     } else {
-      updateTicker('WRONG!!! WRONG!!! WRONG!!!');
+      updateTicker('WRONG!!! Reset to start again');
     }
   }
 
@@ -137,6 +147,7 @@ $(() => {
   //click event for reset button
   function enableReset(){
     $('#reset').on('click', resetGame);
+    $('#reset').on('click', displayResetMessage);
   }
 
   //click event to disable reset button
@@ -148,7 +159,7 @@ $(() => {
 
   //reset game function
   function resetGame() {
-    updateTicker('Game is reset, press play to go again');
+
     enablePlay();
     playedArray = [];
     ansArray = [];
@@ -170,6 +181,10 @@ $(() => {
       left: '420px'},1);
     $('.ticker-text').animate({
       left: '-600px'
-    }, 10000,'linear', animateTicker);
+    }, 6000,'linear', animateTicker);
+  }
+
+  function displayResetMessage() {
+    updateTicker('Game has been reset...Press Play to start');
   }
 }); // end of waiting for DOM to load function

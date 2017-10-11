@@ -54,6 +54,7 @@ h2 {
 }
 .buttons {
   color: white;
+  outline: none;
   font-size: 20px;
   height: 40px;
   text-align: center;
@@ -63,8 +64,8 @@ h2 {
   font-family: 'Electrolize', sans-serif;
   border-radius: 2px;
   transition: all 0.2s ease;
-  background-color: #1D1BFD;
-  background: radial-gradient(#BFBEFF 2%, #1D1BFD 98% );
+  background-color: #FD0600;
+  background: radial-gradient(#FF9A98 2%, #FD0600 98% );
 
 }
 
