@@ -11,7 +11,7 @@ $(() => {
   let numberOfButtons = 3;
   let highScore = 0;
   let currentScore = 0;
-  let difficultyLevel = 750;
+  let difficultyLevel = 600;
 
   enablePlay();
   animateTicker();
@@ -39,11 +39,11 @@ $(() => {
     $('h4').removeClass('neon');
     $(e.target).addClass('neon');
     difficultyLevel = parseInt(e.target.id);
-    if (e.target.id === '1000') {
+    if (e.target.id === '800') {
       updateTicker('Easy...BORING...Press Play to start');
-    } else if (e.target.id === '750') {
+    } else if (e.target.id === '600') {
       updateTicker('Medium...Sensible choice...Press Play to start');
-    } else if (e.target.id === '500') {
+    } else if (e.target.id === '300') {
       updateTicker('Hard...Ballsy...Press Play to start');
     }
     resetGame();
@@ -115,7 +115,8 @@ $(() => {
       disableLiClicks();
       setTimeout(playAnswer, 2000);
     } else {
-      updateTicker('WRONG!!! Reset to start again');
+      updateTicker('WRONG!!! Press play to start again');
+      resetGame();
     }
   }
 

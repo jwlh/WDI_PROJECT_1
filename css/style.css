@@ -16,11 +16,12 @@ body {
 }
 
 main {
-  margin: 2px auto;
+  margin: 20px auto;
   padding: 20px;
   width: 440px;
   background-color: #2f3336;
   border-radius: 20px;
+  box-shadow: 10px 10px 5px black;
 }
 
 h1 {
@@ -29,6 +30,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 400;
   font-family: 'Electrolize', sans-serif;
+  margin-top: 10px;
 }
 
 #controls {
@@ -165,7 +167,8 @@ h5 {
     0 0 80px #f43d41,
     0 0 90px #f43d41,
     0 0 100px #f43d41,
-    0 0 150px #f43d41;
+    0 0 150px #f43d41,
+    5px 5px 2px black;
 }
 
 
