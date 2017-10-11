@@ -167,11 +167,22 @@ h5 {
     0 0 80px #f43d41,
     0 0 90px #f43d41,
     0 0 100px #f43d41,
+    0 0 150px #f43d41;
+}
+
+.neon-shadow {
+  color: white;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #f43d41,
+    0 0 80px #f43d41,
+    0 0 90px #f43d41,
+    0 0 100px #f43d41,
     0 0 150px #f43d41,
     5px 5px 2px black;
 }
-
-
 
 
 .ticker-wrap {

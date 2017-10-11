@@ -105,8 +105,7 @@ $(() => {
   //function to check user answer
   function checkAnswer() {
     if (ansArray.toString() === playedArray.toString()){
-
-      updateTicker('CORRECT! On to the next level!');
+      correctTicker();
       updateScore();
       numberOfButtons++;
       playedArray = [];
@@ -119,6 +118,13 @@ $(() => {
       resetGame();
     }
   }
+
+  //function to randomise correct message on ticker
+  function correctTicker(){
+    const messageArray = ['CORRECT! On to the next level!','WOW! You have a great memory!', 'Well that\'s just showing off now!', 'Nice One! On we go!'];
+    updateTicker(messageArray[Math.floor(Math.random()*messageArray.length)]);
+  }
+
 
   //clicking on play button event
   function enablePlay(){
@@ -182,7 +188,7 @@ $(() => {
       left: '420px'},1);
     $('.ticker-text').animate({
       left: '-600px'
-    }, 6000,'linear', animateTicker);
+    }, 6000,'linear');
   }
 
   function displayResetMessage() {
