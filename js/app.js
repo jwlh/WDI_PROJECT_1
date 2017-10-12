@@ -180,12 +180,12 @@ function disableReset(){
 //reset game function
 function resetGame() {
   updateHighScore();
-  enablePlay();
   playedArray = [];
   ansArray = [];
   numberOfButtons = 3;
   score = 0;
   updateScore();
+  enablePlay();  
 }
 
 // function to update text in ticker-wrap
