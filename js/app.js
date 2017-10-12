@@ -1,7 +1,3 @@
-
-//things to do today
-//add mode where you can just play around with the synth
-//remove blue highlighting around play and rest buttons when you click
 let playedArray = [];
 let ansArray = [];
 let numberOfButtons = 3;
@@ -16,6 +12,8 @@ let $currentScore;
 let $highScore;
 let $tickerText;
 let $lisArray;
+
+$(init);
 
 function init() {
 
@@ -36,15 +34,7 @@ function init() {
   displayWelcome();
   enableLiClicks();
   enableDifficultySelectors();
-
 }
-
-$(init);
-
-
-
-
-
 
 //function to start game
 function startGame() {
@@ -209,28 +199,28 @@ function updateTicker(sample) {
 function animateTicker() {
   $tickerText.animate({
     left: '420px'},1);
-    $tickerText.animate({
-      left: '-600px'
-    }, 6000,'linear');
-  }
+  $tickerText.animate({
+    left: '-600px'
+  }, 6000,'linear');
+}
 
-  //special ticker message for welcome
-  function displayWelcome(){
-    $tickerText.stop(true,true);
-    $tickerText.html('Hi, Welcome to Simon The Synth. Please press play to start the game.');
-    animateLongTicker();
-  }
+//special ticker message for welcome
+function displayWelcome(){
+  $tickerText.stop(true,true);
+  $tickerText.html('Hi, Welcome to Simon The Synth. Please press play to start the game.');
+  animateLongTicker();
+}
 
-  //animation of ticker text
-  function animateLongTicker() {
-    $tickerText.animate({
-      left: '420px'},1);
-      $tickerText.animate({
-        left: '-1020px'
-      }, 7000,'linear',animateLongTicker);
-    }
+//animation of ticker text
+function animateLongTicker() {
+  $tickerText.animate({
+    left: '420px'},1);
+  $tickerText.animate({
+    left: '-1020px'
+  }, 7000,'linear',animateLongTicker);
+}
 
-    //special ticker message for reset game
-    function displayResetMessage() {
-      updateTicker('Game has been reset...Press Play to start');
-    }
+//special ticker message for reset game
+function displayResetMessage() {
+  updateTicker('Game has been reset...Press Play to start');
+}
