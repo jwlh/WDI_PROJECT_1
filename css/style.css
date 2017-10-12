@@ -1,8 +1,8 @@
 
 /*link to dot matrix font*/
 @font-face {
-    font-family: dotMatrix;
-    src: url(../dot_matrix/DOTMATRI.TTF);
+  font-family: dotMatrix;
+  src: url(../dot_matrix/DOTMATRI.TTF);
 }
 
 
@@ -11,17 +11,24 @@
 
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   background-image:url(../images/tileable-light-wood-textures-5.jpg);
+  height: 100vh;
+
 }
 
 main {
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   width: 440px;
   background-color: #2f3336;
   border-radius: 20px;
   box-shadow: 10px 10px 5px black;
+
 }
 
 h1 {
@@ -36,7 +43,6 @@ h1 {
 #controls {
   background-color: white;
   width: 400px;
-  height: 120px;
   margin: 0 auto;
   padding: 15px 15px;
   border-top-left-radius: 20px;
@@ -44,10 +50,10 @@ h1 {
 }
 
 .button-container {
-display: inline-block;
-padding: 4px;
-margin: 6px 4px;
-text-align: center;
+  display: inline-block;
+  padding: 4px;
+  margin: 6px 4px;
+  text-align: center;
 }
 
 
@@ -160,28 +166,28 @@ h5 {
 .neon {
   color: white;
   text-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff0000,
-    0 0 40px #f43d41,
-    0 0 80px #f43d41,
-    0 0 90px #f43d41,
-    0 0 100px #f43d41,
-    0 0 150px #f43d41;
+  0 0 5px #ff0000,
+  0 0 10px #ff0000,
+  0 0 20px #ff0000,
+  0 0 40px #f43d41,
+  0 0 80px #f43d41,
+  0 0 90px #f43d41,
+  0 0 100px #f43d41,
+  0 0 150px #f43d41;
 }
 
 .neon-shadow {
   color: white;
   text-shadow:
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff0000,
-    0 0 40px #f43d41,
-    0 0 80px #f43d41,
-    0 0 90px #f43d41,
-    0 0 100px #f43d41,
-    0 0 150px #f43d41,
-    5px 5px 2px black;
+  0 0 5px #ff0000,
+  0 0 10px #ff0000,
+  0 0 20px #ff0000,
+  0 0 40px #f43d41,
+  0 0 80px #f43d41,
+  0 0 90px #f43d41,
+  0 0 100px #f43d41,
+  0 0 150px #f43d41,
+  5px 5px 2px black;
 }
 
 

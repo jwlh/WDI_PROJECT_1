@@ -14,7 +14,7 @@ $(() => {
   let difficultyLevel = 600;
 
   enablePlay();
-  animateTicker();
+  displayWelcome();
   enableLiClicks();
 
 
@@ -190,6 +190,22 @@ $(() => {
       left: '-600px'
     }, 6000,'linear');
   }
+
+  function displayWelcome(){
+    $('.ticker-text').stop(true,true);
+    $('.ticker-text').html('Hi, Welcome to Simon The Synth. Please press play to start the game.');
+    animateLongTicker();
+  }
+
+  //animation of ticker text
+  function animateLongTicker() {
+    $('.ticker-text').animate({
+      left: '420px'},1);
+    $('.ticker-text').animate({
+      left: '-1020px'
+    }, 7000,'linear',animateLongTicker);
+  }
+
 
   function displayResetMessage() {
     updateTicker('Game has been reset...Press Play to start');
