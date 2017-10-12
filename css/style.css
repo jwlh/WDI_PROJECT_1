@@ -57,7 +57,7 @@ h2 {
   font-family: 'Electrolize', sans-serif;
 }
 
-#reset {
+/*#reset {
   background: radial-gradient(#FF9A98 2%, #FD0600 98% );
   background-color: #FD0600;
   border-radius: 2px;
@@ -71,6 +71,7 @@ h2 {
   text-align: center;
   transition: all 0.2s ease;
   width: 40px;
+  line-height: 40px;
 }
 
 #play {
@@ -87,7 +88,45 @@ h2 {
   text-align: center;
   transition: all 0.2s ease;
   width: 40px;
+  line-height: 40px;
+}*/
+
+.fa {
+  font-size: 40px;
+  margin-bottom: 10px;
+  opacity: 1;
+  text-align: center;
+  transition: all 0.2s ease;
+
 }
+
+.reset {
+  /*color: #FD0600;*/
+  background: radial-gradient(#FF9A98 0.5%, #FD0600 99.5% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.play {
+  background: radial-gradient(#C8FFB7 0.5%, #46FF0D 99.5% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*color: #46FF0D;*/
+}
+
+.symbol-hidden {
+  /*color: radial-gradient(#C5CACC 2%, #7F8687 98% );*/
+  background: radial-gradient(#C5CACC 0.5%, #7F8687 99.5%  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+/*.fa-play, .fa-refresh{
+  margin-bottom: 10px;
+}*/
 
 #difficultyBox {
   float: right;

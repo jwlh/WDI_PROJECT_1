@@ -19,8 +19,8 @@ function init() {
 
   $h4 = $('h4');
   $li = $('li');
-  $play = $('#play');
-  $reset = $('#reset');
+  $play = $('.play');
+  $reset = $('.reset');
   $currentScore = $('#currentScore');
   $highScore = $('#highScore');
   $tickerText = $('.ticker-text');
@@ -34,11 +34,15 @@ function init() {
   displayWelcome();
   enableLiClicks();
   enableDifficultySelectors();
-  enableReset(); 
+  enableReset();
 }
 
 //function to start game
 function startGame() {
+  $play.removeClass('symbol-hidden');
+  setTimeout(function() {
+    $play.addClass('symbol-hidden');
+  },500);
   updateTicker('Let\'s Play!');
   disableLiClicks();
   disablePlay();
@@ -144,6 +148,23 @@ function correctTicker(){
 //clicking on play button event
 function enablePlay(){
   $play.on('click', startGame);
+  $play.on('click', colorPlaySymbol);
+}
+
+//function fade colour up and down on play symbol
+function colorPlaySymbol(){
+  $play.removeClass('symbol-hidden');
+  setTimeout(function() {
+    $play.addClass('symbol-hidden');
+  },1000);
+}
+
+//function fade colour up and down on reset symbol
+function colorResetSymbol(){
+  $reset.removeClass('symbol-hidden');
+  setTimeout(function() {
+    $reset.addClass('symbol-hidden');
+  },1000);
 }
 
 //disable clicking on play button event
@@ -171,6 +192,7 @@ function updateHighScore() {
 function enableReset(){
   $reset.on('click', resetGame);
   $reset.on('click', displayResetMessage);
+  $reset.on('click', colorResetSymbol);
 }
 
 //click event to disable reset button
