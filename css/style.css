@@ -57,9 +57,25 @@ h2 {
   font-family: 'Electrolize', sans-serif;
 }
 
-.buttons {
+#reset {
   background: radial-gradient(#FF9A98 2%, #FD0600 98% );
   background-color: #FD0600;
+  border-radius: 2px;
+  color: white;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 20px;
+  height: 40px;
+  margin-bottom: 10px;
+  opacity: 1;
+  outline: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  width: 40px;
+}
+
+#play {
+  background: radial-gradient(#C8FFB7 2%, #46FF0D 98% );
+  background-color: #46FF0D;
   border-radius: 2px;
   color: white;
   font-family: 'Electrolize', sans-serif;
