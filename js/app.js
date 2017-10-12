@@ -34,6 +34,7 @@ function init() {
   displayWelcome();
   enableLiClicks();
   enableDifficultySelectors();
+  enableReset(); 
 }
 
 //function to start game
@@ -185,7 +186,7 @@ function resetGame() {
   numberOfButtons = 3;
   score = 0;
   updateScore();
-  enablePlay();  
+  enablePlay();
 }
 
 // function to update text in ticker-wrap

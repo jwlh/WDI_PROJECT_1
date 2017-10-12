@@ -5,10 +5,8 @@
   src: url(../dot_matrix/DOTMATRI.TTF);
 }
 
-
 * {
   box-sizing: border-box;
-
 }
 
 html {
@@ -21,87 +19,87 @@ body {
 }
 
 main {
-  margin: 10px auto;
-  padding: 20px;
-  width: 440px;
   background-color: #2f3336;
   border-radius: 20px;
   box-shadow: 10px 10px 5px black;
+  margin: 10px auto;
+  padding: 20px;
+  width: 440px;
 }
 
 h1 {
-  font-size: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 400;
   font-family: 'Electrolize', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
   margin-top: 10px;
   min-width: 450px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #controls {
   background-color: white;
-  width: 400px;
-  margin: 0 auto;
-  padding: 15px 15px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  margin: 0 auto;
+  padding: 15px 15px;
+  width: 400px;
 }
 
 .button-container {
   display: inline-block;
-  padding: 4px;
   margin: 6px 4px;
+  padding: 4px;
   text-align: center;
 }
-
 
 h2 {
   font-family: 'Electrolize', sans-serif;
 }
+
 .buttons {
+  background: radial-gradient(#FF9A98 2%, #FD0600 98% );
+  background-color: #FD0600;
+  border-radius: 2px;
   color: white;
-  outline: none;
+  font-family: 'Electrolize', sans-serif;
   font-size: 20px;
   height: 40px;
-  text-align: center;
-  width: 40px;
-  opacity: 1;
   margin-bottom: 10px;
-  font-family: 'Electrolize', sans-serif;
-  border-radius: 2px;
+  opacity: 1;
+  outline: none;
+  text-align: center;
   transition: all 0.2s ease;
-  background-color: #FD0600;
-  background: radial-gradient(#FF9A98 2%, #FD0600 98% );
-
+  width: 40px;
 }
 
 #difficultyBox {
-  margin: 6px auto;
   float: right;
+  margin: 6px auto;
 }
 
 h3 {
-  font-size: 25px;
   color: black;
   font-family: 'Electrolize', sans-serif;
+  font-size: 25px;
   text-align: center;
 }
 
 h4 {
-  padding-top: 20px;
-  font-size: 20px;
   color: black;
-  font-family: 'Electrolize', sans-serif;
-  text-align: center;
   display: inline-block;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 20px;
   margin: 0 6px;
+  padding-top: 20px;
+  text-align: center;
 }
+
 ul {
   border: 2px solid white;
   height: 400px;
-  width: 400px;
   margin: 0 auto;
+  width: 400px;
 }
 
 /*highlight class for buttons*/
@@ -110,58 +108,57 @@ ul {
 }
 
 li {
+  border-radius: 2px;
   color: white;
   float: left;
+  font-family: 'Electrolize', sans-serif;
   font-size: 30px;
   height: 22%;
   list-style-type: none;
-  text-align: center;
-  width: 22%;
-  opacity: 1;
   margin: 1.5%;
-  font-family: 'Electrolize', sans-serif;
-  border-radius: 2px;
+  opacity: 1;
+  text-align: center;
   transition: all 0.2s ease;
+  width: 22%;
 }
 
 .scores {
-  width: 400px;
-  margin: auto;
-  padding: 4px;
   border: 2px solid white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  margin: auto;
+  padding: 4px;
+  width: 400px;
 }
 
 .columnA {
-  background-color: #FE9500;
   background: radial-gradient(#FFCE88 2%, #FE9500 98% );
+  background-color: #FE9500;
 }
 
 .columnB {
-  background-color: #FA4CFF;
   background: radial-gradient(#FDAAFF 2%, #FA00FF 98%);
+  background-color: #FA4CFF;
 }
 .columnC {
-  background-color: #46FF0D;
   background: radial-gradient(#C8FFB7 2%, #46FF0D 98% );
+  background-color: #46FF0D;
 }
 .columnD {
-  background-color: #FD0600;
   background: radial-gradient(#FF9A98 2%, #FD0600 98% );
+  background-color: #FD0600;
 }
 
 .hidden {
-  background: #7F8687;
   background: radial-gradient(#C5CACC 2%, #7F8687 98% );
-
+  background: #7F8687;
 }
 
 h5 {
-  padding: 5px;
-  font-size: 30px;
   color: white;
   font-family: 'Electrolize', sans-serif;
+  font-size: 30px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -195,28 +192,26 @@ h5 {
 
 
 .ticker-wrap {
-
-  width: 400px;
-  overflow: hidden;
-  height: 50px;
   background-color: black;
   border: 3px solid white;
+  height: 50px;
   margin: 0 auto;
-
+  overflow: hidden;
+  width: 400px;
 }
 
 .ticker {
-  position: relative;
-  font-family: dotMatrix;
   color: red;
+  display: inline-block;
+  font-family: dotMatrix;
   font-size: 30px;
   height: 30px;
-  display: inline-block;
   line-height: 40px;
+  position: relative;
   white-space: nowrap;
 }
 
 .ticker-text {
-  position:absolute;
   left: 420px;
+  position:absolute;
 }
