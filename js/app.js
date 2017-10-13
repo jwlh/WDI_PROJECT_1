@@ -132,6 +132,7 @@ function checkAnswer() {
     ansArray.push($lisArray[Math.floor(Math.random()*$lisArray.length)]);
     disableReset();
     disableLiClicks();
+    disablePlay();
     setTimeout(playAnswer, 2000);
   } else {
     updateTicker('WRONG!!! Press play to start again');
