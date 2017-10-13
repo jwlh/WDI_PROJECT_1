@@ -166,7 +166,7 @@ function updateScore() {
   score= ansArray.length;
   $currentScore.text(`Current Score = ${score}`);
 }
-//function to update High Scor
+//function to update High Score
 function updateHighScore() {
   if (parseInt(highestScore) === 0) {
     highestScore = score;
